@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "products")
+@Table(name = "product")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,11 +16,15 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProducto;
 
+    @Column(nullable = false, length = 150)
     private String nameProduct;
 
+    @Column(nullable = false)
     private Integer amountProduct;
 
+    @Column(nullable = false)
     private Double priceProduct;
 
+    @Column(length = 500)
     private String descriptionProduct;
 }
